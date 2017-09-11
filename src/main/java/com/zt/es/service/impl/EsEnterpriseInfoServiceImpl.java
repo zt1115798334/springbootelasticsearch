@@ -25,4 +25,9 @@ public class EsEnterpriseInfoServiceImpl implements EsEnterpriseInfoService {
         esEnterpriseInfoRepository.save(esEnterpriseInfos);
         return false;
     }
+
+    @Override
+    public List<EsEnterpriseInfo> findByenterpriseAbbrLike(String enterpriseAbbr) {
+        return esEnterpriseInfoRepository.findByEnterpriseAbbrLike(enterpriseAbbr);
+    }
 }

@@ -111,6 +111,13 @@ public class MyController {
         return true;
     }
 
+    @RequestMapping("/searchEnterpriseAbbr")
+    @ResponseBody
+    public Object searchEnterpriseAbbr(String enterpriseAbbr) {
+        List<EsEnterpriseInfo> esEnterpriseInfos = esEnterpriseInfoService.findByenterpriseAbbrLike(enterpriseAbbr);
+        return  esEnterpriseInfos;
+    }
+
     public static String getAbbreviation(String enterpriseName) {
         String result = null;
         if (enterpriseName.endsWith("有限责任公司")) {

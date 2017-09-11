@@ -9,4 +9,6 @@ public interface EsEnterpriseInfoService {
     boolean add(EsEnterpriseInfo esEnterpriseInfo);
 
     boolean batchAdd(List<EsEnterpriseInfo> esEnterpriseInfos);
+
+    List<EsEnterpriseInfo> findByenterpriseAbbrLike(String enterpriseAbbr);
 }
