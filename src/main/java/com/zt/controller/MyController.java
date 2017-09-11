@@ -1,7 +1,7 @@
 package com.zt.controller;
 
-import com.zt.el.dao.ElArticleService;
-import com.zt.el.entity.ElArticle;
+import com.zt.es.dao.EsArticleService;
+import com.zt.es.entity.EsArticle;
 import com.zt.mongo.entity.Article;
 import com.zt.mongo.service.ArticleService;
 import com.zt.utils.ClassReflection;
@@ -20,18 +20,18 @@ public class MyController {
     private ArticleService articleService;
 
     @Autowired
-    private ElArticleService elArticleService;
+    private EsArticleService esArticleService;
 
     @RequestMapping("/test")
     @ResponseBody
     public Object test() {
         List<Article> articles = articleService.findListByPageRtList(1, 2);
         articles.forEach(article -> {
-            ElArticle elArticle = new ElArticle();
+            EsArticle esArticle = new EsArticle();
             try {
-                ClassReflection.reflectionAttr(article, elArticle);
-                System.out.println(elArticle.toString());
-                elArticleService.add(elArticle);
+                ClassReflection.reflectionAttr(article, esArticle);
+                System.out.println(esArticle.toString());
+                esArticleService.add(esArticle);
             } catch(Exception e) {
                 e.printStackTrace();
             }

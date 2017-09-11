@@ -1,13 +1,15 @@
-package com.zt.el.entity;
+package com.zt.es.entity;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.util.Date;
 
 @Document(indexName = "article_index", type = "article")
-public class ElArticle {
+public class EsArticle {
     private static final long serialVersionUID = 9201034849892179274L;
 
+    @Id
     private String articleId;
 
     private String title;// 标题
@@ -180,7 +182,7 @@ public class ElArticle {
 
     @Override
     public String toString() {
-        return "ElArticle{" +
+        return "EsArticle{" +
                 "articleId='" + articleId + '\'' +
                 ", title='" + title + '\'' +
                 ", media='" + media + '\'' +
