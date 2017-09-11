@@ -9,7 +9,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableScheduling
 @EnableSwagger2
-@ComponentScan(basePackages = {"com.zt"})
 public class App {
 
     public static void main(String[] args) {
