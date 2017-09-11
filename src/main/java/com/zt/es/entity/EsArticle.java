@@ -1,12 +1,14 @@
 package com.zt.es.entity;
 
+import com.zt.constants.SysConst;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
+import java.io.Serializable;
 import java.util.Date;
 
-@Document(indexName = "article_index", type = "article")
-public class EsArticle {
+@Document(indexName = SysConst.INDEX, type = SysConst.ARTICLE)
+public class EsArticle implements Serializable {
     private static final long serialVersionUID = 9201034849892179274L;
 
     @Id

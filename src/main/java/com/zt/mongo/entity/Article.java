@@ -1,7 +1,7 @@
 package com.zt.mongo.entity;
 
 
-import com.zt.entity.BasePageRequest;
+import com.zt.base.entity.BasePageRequest;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;

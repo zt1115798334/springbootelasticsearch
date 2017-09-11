@@ -1,6 +1,6 @@
 package com.zt.mongo.service.impl;
 
-import com.zt.entity.PageResult;
+import com.zt.base.entity.PageResult;
 import com.zt.mongo.dao.ArticleDao;
 import com.zt.mongo.entity.Article;
 import com.zt.mongo.repository.ArticleRepository;

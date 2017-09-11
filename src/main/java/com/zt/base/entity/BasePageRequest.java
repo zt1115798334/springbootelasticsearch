@@ -1,4 +1,4 @@
-package com.zt.entity;
+package com.zt.base.entity;
 
 
 import org.springframework.data.annotation.Transient;

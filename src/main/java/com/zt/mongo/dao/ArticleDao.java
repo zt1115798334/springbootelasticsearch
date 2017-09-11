@@ -1,6 +1,6 @@
 package com.zt.mongo.dao;
 
-import com.zt.entity.PageResult;
+import com.zt.base.entity.PageResult;
 import com.zt.mongo.entity.Article;
 
 import java.util.List;

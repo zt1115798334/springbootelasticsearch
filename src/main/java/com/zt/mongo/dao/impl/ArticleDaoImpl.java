@@ -1,7 +1,7 @@
 package com.zt.mongo.dao.impl;
 
 
-import com.zt.entity.PageResult;
+import com.zt.base.entity.PageResult;
 import com.zt.mongo.dao.ArticleDao;
 import com.zt.mongo.entity.Article;
 import org.springframework.beans.factory.annotation.Autowired;
