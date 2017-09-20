@@ -1,6 +1,5 @@
 package com.zt.es.service.impl;
 
-import com.zt.constants.SysConst;
 import com.zt.es.dao.EsEnterpriseInfoDao;
 import com.zt.es.entity.EsEnterpriseInfo;
 import com.zt.es.repository.EsEnterpriseInfoRepository;
@@ -43,6 +42,7 @@ public class EsEnterpriseInfoServiceImpl implements EsEnterpriseInfoService {
         WildcardQueryBuilder wildcard = QueryBuilders.wildcardQuery("enterpriseAbbr", "*" + enterpriseAbbr + "*");
         TermQueryBuilder termQuery = QueryBuilders.termQuery("enterpriseAbbr", enterpriseAbbr);
         MatchQueryBuilder matchQuery = QueryBuilders.matchQuery("enterpriseAbbr", enterpriseAbbr);
-        return  esEnterpriseInfoDao.findEsEnterpriseInfoByQuery(SysConst.INDEX, SysConst.ENTERPRISEINFO, fuzzy);
+//        return  esEnterpriseInfoDao.findEsEnterpriseInfoByQuery(SysConst.INDEX, SysConst.ENTERPRISEINFO, fuzzy);
+        return esEnterpriseInfoRepository.findByEnterpriseAbbrLike(enterpriseAbbr);
     }
 }
