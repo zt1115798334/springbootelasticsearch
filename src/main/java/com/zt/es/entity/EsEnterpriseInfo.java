@@ -4,6 +4,9 @@ import com.zt.constants.SysConst;
 import com.zt.entity.Investmenter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldIndex;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,8 +18,14 @@ public class EsEnterpriseInfo implements Serializable {
 
     @Id
     private String id;
+
+    @Field(index = FieldIndex.analyzed, type = FieldType.String, store = true, analyzer = "ik", searchAnalyzer = "ik")
     private String enterpriseName;
+
+    @Field(index = FieldIndex.analyzed, type = FieldType.String, store = true, analyzer = "ik", searchAnalyzer = "ik")
     private String enterpriseAbbr;
+
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.Object, store = true)
     private List<Investmenter> investmenterList;
 
     public EsEnterpriseInfo() {

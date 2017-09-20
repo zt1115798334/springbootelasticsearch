@@ -3,6 +3,9 @@ package com.zt.es.entity;
 import com.zt.constants.SysConst;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldIndex;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,36 +17,52 @@ public class EsArticle implements Serializable {
     @Id
     private String articleId;
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String title;// 标题
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String media;// 媒体名称
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String mediaType;    //媒体类型
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String content;// 内容
 
+    @Field(type = FieldType.Date, store = true)
     private Date publishDateTime;// 发布日期时间
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String publishDate;// 发布日期
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String author;// 作者
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String keywords;// 关键词
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String url;// 原文链接
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String urlMD5;// url的MD5值
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String crawlerDate;// 采集时间，格式：yyyy-MM-dd
 
+    @Field(type = FieldType.Date, store = true)
     private Date crawlerDateTime;// 采集时间
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String articleFingerprint;//文章指纹
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.Integer, store = true)
     private Integer hot;//热度
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String isAnalyzed;//是否已经分析，已经分析：是；未分析：否
 
+    @Field(index = FieldIndex.not_analyzed, type = FieldType.String, store = true)
     private String taskId;//晴空系统的采集任务id，用于到晴空系统中反查数据
 
     public String getArticleId() {
